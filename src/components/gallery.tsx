@@ -12,7 +12,12 @@ interface Props {
 }
 
 export default function Gallery({ images }: Props) {
-  const [selected, setSelected] = useState<Image | null>(null);
+  const [index, setIndex] = useState<number | null>(null);
+
+  const handleClose = () => setIndex(null);
+  const handleNext = () => setIndex((prev) => (prev === null ? null : (prev + 1) % images.length));
+  const handlePrev = () =>
+    setIndex((prev) => (prev === null ? null : (prev - 1 + images.length) % images.length));
 
   return (
     <>
@@ -23,17 +28,19 @@ export default function Gallery({ images }: Props) {
             src={img.src}
             alt={img.alt}
             className="w-full object-contain cursor-pointer hover:opacity-80 transition"
-            onClick={() => setSelected(img)}
+            onClick={() => setIndex(i)}
           />
         ))}
       </div>
 
-      {selected && (
+      {index !== null && (
         <ImageModal
-          src={selected.src}
-          alt={selected.alt}
-          caption={selected.caption}
-          onClose={() => setSelected(null)}
+          src={images[index].src}
+          alt={images[index].alt}
+          caption={images[index].caption}
+          onClose={handleClose}
+          onNext={handleNext}
+          onPrev={handlePrev}
         />
       )}
     </>
