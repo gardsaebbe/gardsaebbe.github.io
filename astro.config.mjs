@@ -25,4 +25,6 @@ export default defineConfig({
       fallbacks: ["Inter", "sans-serif"],
     }]
   },
+
+  adapter: vercel()
 });
