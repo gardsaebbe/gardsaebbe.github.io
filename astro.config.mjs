@@ -4,13 +4,10 @@ import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 
-import vercel from "@astrojs/vercel";
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gardsaebbe.github.io/',
-  base: '/website',
-  output: 'static',
+  base: '/website/', // repo-navnet ditt
   vite: {
     plugins: [tailwindcss()]
   },
@@ -24,7 +21,5 @@ export default defineConfig({
       cssVariable: "--font-geist",
       fallbacks: ["Inter", "sans-serif"],
     }]
-  },
-
-  adapter: vercel()
+  }
 });
