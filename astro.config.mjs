@@ -10,7 +10,7 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   site: 'https://gardsaebbe.github.io',
   base: '/website',
-  output: 'server',
+  output: 'static',
   vite: {
     plugins: [tailwindcss()]
   },
