@@ -1,7 +1,8 @@
 {
-  "name": "nikola-tesla",
+  "name": "gardsaebbe.github.io",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
