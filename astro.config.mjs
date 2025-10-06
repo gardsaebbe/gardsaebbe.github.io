@@ -8,7 +8,7 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://gardsaebbe.github.io',
+  site: 'https://gardsaebbe.github.io/website/',
   base: '/website',
   output: 'static',
   vite: {
