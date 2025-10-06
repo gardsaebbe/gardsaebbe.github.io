@@ -9,7 +9,7 @@ import vercel from "@astrojs/vercel";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://gardsaebbe.github.io/',
-  base: '/website',
+  base: '/website/',
   output: 'static',
   vite: {
     plugins: [tailwindcss()]
@@ -25,6 +25,4 @@ export default defineConfig({
       fallbacks: ["Inter", "sans-serif"],
     }]
   },
-
-  adapter: vercel()
 });
